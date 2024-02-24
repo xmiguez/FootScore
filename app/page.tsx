@@ -1,0 +1,96 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
+export default async function Home() {
+  const supabase = createClientComponentClient();
+
+  const handleLogin = () => {
+    supabase.auth.signInWithOAuth({
+      provider: "github",
+      options: {
+        redirectTo: `${location.origin}/auth/callback`,
+      },
+    });
+  };
+
+  return (
+    <>
+      <div className="dark:bg-black bg-white h-90vh dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_5%,black)]"></div>
+        <section className="space-y-6 pt-32 lg:pt-40">
+          <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+            <Link
+              href="https://twitter.com/vargnassonn"
+              className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+              target="_blank"
+            >
+              @vargassonn
+            </Link>
+            <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+              FootScore.
+            </h1>
+            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                className="font-bold underline"
+              >
+                Nextjs
+              </a>{" "}
+              +{" "}
+              <a
+                href="https://ui.shadcn.com/"
+                target="_blank"
+                className="font-bold underline"
+              >
+                Shadcn
+              </a>{" "}
+              +{" "}
+              <a
+                href="https://supabase.com/"
+                target="_blank"
+                className="font-bold underline"
+              >
+                Supabase
+              </a>{" "}
+              +{" "}
+              <a
+                href="https://www.api-football.com/"
+                target="_blank"
+                className="font-bold underline"
+              >
+                Api-Football
+              </a>
+              .
+            </p>
+            <div className="space-x-4">
+              <Link
+                href="https://github.com/xmiguez/FootScore"
+                target="_blank"
+                rel="noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" })
+                )}
+              >
+                GitHub
+              </Link>
+            </div>
+            <Link
+              href=""
+              onClick={handleLogin}
+              className={cn(buttonVariants({ size: "lg" }))}
+            >
+              Entrar con Github
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}
