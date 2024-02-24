@@ -2,23 +2,13 @@
 
 import Link from "next/link";
 import { VercelLogoIcon, DotFilledIcon } from "@radix-ui/react-icons";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+
 import { ModeToggle } from "@/components/dark-mode";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { UserButton } from "@clerk/nextjs";
 
 export default function SiteHeader() {
-  const router = useRouter();
-  const path = usePathname();
-  const supabase = createClientComponentClient();
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.refresh();
-  };
-  const isAuthPage = path === "/";
-
   const pathname = usePathname();
 
   return (
@@ -59,14 +49,7 @@ export default function SiteHeader() {
             </Link>
           </div>
           <ModeToggle />
-          {!isAuthPage && (
-            <Button
-              className="w-[50px] h-[25px] text-[12px]"
-              onClick={handleLogout}
-            >
-              Salir
-            </Button>
-          )}
+          <UserButton />
         </nav>
       </div>
     </header>

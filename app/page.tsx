@@ -5,20 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-
 export default async function Home() {
-  const supabase = createClientComponentClient();
-
-  const handleLogin = () => {
-    supabase.auth.signInWithOAuth({
-      provider: "github",
-      options: {
-        redirectTo: `${location.origin}/auth/callback`,
-      },
-    });
-  };
-
   return (
     <>
       <div className="dark:bg-black bg-white h-90vh dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
@@ -53,11 +40,11 @@ export default async function Home() {
               </a>{" "}
               +{" "}
               <a
-                href="https://supabase.com/"
+                href="https://clerk.com/"
                 target="_blank"
                 className="font-bold underline"
               >
-                Supabase
+                Clerk
               </a>{" "}
               +{" "}
               <a
@@ -81,13 +68,6 @@ export default async function Home() {
                 GitHub
               </Link>
             </div>
-            <Link
-              href=""
-              onClick={handleLogin}
-              className={cn(buttonVariants({ size: "lg" }))}
-            >
-              Entrar con Github
-            </Link>
           </div>
         </section>
       </div>
