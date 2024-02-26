@@ -233,7 +233,7 @@ export const columns: ColumnDef<User>[] = [
       return (
         <>
           <Link href={`/team/` + row.getValue("teams_home.id")}>
-            <div className="max-w-[200px] truncate space-y-2 text-center">
+            <div className="max-w-[250px] truncate space-y-2 text-center">
               <div>
                 <Image
                   alt=""
@@ -272,7 +272,7 @@ export const columns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       return (
         <>
-          <div className="text-[20px] flex gap-2 text-center justify-center">
+          <div className="text-[30px] flex gap-2 text-center justify-center">
             <div>{row.getValue("goals_home")}</div>
             <p>-</p>
             <div>{row.getValue("goals_away")}</div>
