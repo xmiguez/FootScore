@@ -31,12 +31,12 @@ export default function DatePicker({ date }: Props) {
         <Button
           variant={"outline"}
           className={cn(
-            "container justify-start text-left font-normal",
+            "container max-w-[200px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
-          {selectedDay ? format(selectedDay, "PP") : <span>Calendario</span>}
+          {selectedDay ? format(selectedDay, "PP") : <span>Partidos</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

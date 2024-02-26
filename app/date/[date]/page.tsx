@@ -1,6 +1,5 @@
 import { DataTable } from "@/components/tabla/data-table";
-import { columns } from "@/components/tabla/columns";
-import DatePicker from "@/components/date-picker";
+import { columns } from "@/components/tabla/columns-partidos";
 import { getMatches } from "@/api/football";
 
 export default async function Home({
@@ -8,14 +7,21 @@ export default async function Home({
 }: {
   params: { date: string };
 }) {
-  const datas = await getMatches(date);
+  const data = await getMatches(date);
 
   return (
     <>
-      <section className="container ">
+      <section className="container">
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold tracking-tight">
+            Fixture de partidos
+          </h2>
+          <p className="text-muted-foreground">
+            Selecciona el día para ver los partidos
+          </p>
+        </div>
         <div className="py-4">
-          <DatePicker date={date} />
-          <DataTable columns={columns} data={datas} />
+          <DataTable columns={columns} data={data} />
         </div>
       </section>
     </>

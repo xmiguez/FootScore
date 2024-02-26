@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import SiteHeader from "@/components/site-header";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import SiteFooter from "@/components/site-footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
           >
             <SiteHeader />
             {children}
+            <SiteFooter />
           </ThemeProvider>
         </body>
       </html>

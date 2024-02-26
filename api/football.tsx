@@ -1,6 +1,6 @@
 "use server";
 
-import { User } from "@/components/tabla/columns";
+import { User } from "@/components/tabla/columns-partidos";
 
 export async function getMatches(date: string): Promise<User[]> {
   const res = await fetch(
