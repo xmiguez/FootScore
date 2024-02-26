@@ -270,7 +270,7 @@ export const columns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       return (
         <>
-          <div className="text-[20px] flex gap-2 text-center justify-center">
+          <div className="text-[35px] max-w-[25px] flex gap-2 text-center justify-center">
             <div>{row.getValue("goals_home")}</div>
             <p>-</p>
             <div>{row.getValue("goals_away")}</div>
