@@ -9,3 +9,20 @@ Fixture
 
 Teams
 ![Team](https://github.com/xmiguez/FootScore/assets/134708432/443747e8-5feb-4f53-9a1d-b0126d902b25)
+
+Steps:
+
+1- Git clone https://github.com/xmiguez/FootScore.git
+
+2- Create and populate a .env.local File with:
+
+APIFOOTBALL_TOKEN=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+3- npm i (For install dependencies)
+
+4- npm run dev (to run de app)
+
+5- enjoy
+
