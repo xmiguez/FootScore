@@ -24,6 +24,7 @@ npm i
 npm run dev
 ```
 
+
 Main Screen
 ![Main](https://github.com/xmiguez/FootScore/assets/134708432/9e8b0956-3a4b-4e58-baff-c02ae6a53da5)
 
