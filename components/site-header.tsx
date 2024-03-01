@@ -6,6 +6,8 @@ import { VercelLogoIcon, DotFilledIcon } from "@radix-ui/react-icons";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import DatePicker from "./date-picker";
+import { ModeToggle } from "@/components/dark-mode";
+import { UserButton } from "@clerk/nextjs";
 
 export default function SiteHeader() {
   const pathname = usePathname();
@@ -43,6 +45,8 @@ export default function SiteHeader() {
                   Live
                 </Link>
               </div>
+              <ModeToggle />
+              <UserButton />
             </div>
           </nav>
         </div>

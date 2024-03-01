@@ -8,69 +8,64 @@ import { buttonVariants } from "@/components/ui/button";
 export default async function Home() {
   return (
     <>
-      <div className="dark:bg-black bg-white h-90vh dark:bg-dot-white/[0.2] bg-dot-black/[0.2] ">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_5%,black)]"></div>
-        <section className="space-y-6 pt-32 lg:pt-40">
-          <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-            <Link
-              href="https://twitter.com/vargnassonn"
-              className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+      <section className="space-y-6 pt-32 lg:pt-40">
+        <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+          <Link
+            href="https://twitter.com/vargnassonn"
+            className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+            target="_blank"
+          >
+            @vargassonn
+          </Link>
+          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+            FootScore.
+          </h1>
+          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <a
+              href="https://nextjs.org/"
               target="_blank"
+              className="font-bold underline"
             >
-              @vargassonn
+              Nextjs
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://ui.shadcn.com/"
+              target="_blank"
+              className="font-bold underline"
+            >
+              Shadcn
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://clerk.com/"
+              target="_blank"
+              className="font-bold underline"
+            >
+              Clerk
+            </a>{" "}
+            +{" "}
+            <a
+              href="https://www.api-football.com/"
+              target="_blank"
+              className="font-bold underline"
+            >
+              Api-Football
+            </a>
+            .
+          </p>
+          <div className="space-x-4">
+            <Link
+              href="https://github.com/xmiguez/FootScore"
+              target="_blank"
+              rel="noreferrer"
+              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+            >
+              GitHub
             </Link>
-            <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-              FootScore.
-            </h1>
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-              <a
-                href="https://nextjs.org/"
-                target="_blank"
-                className="font-bold underline"
-              >
-                Nextjs
-              </a>{" "}
-              +{" "}
-              <a
-                href="https://ui.shadcn.com/"
-                target="_blank"
-                className="font-bold underline"
-              >
-                Shadcn
-              </a>{" "}
-              +{" "}
-              <a
-                href="https://clerk.com/"
-                target="_blank"
-                className="font-bold underline"
-              >
-                Clerk
-              </a>{" "}
-              +{" "}
-              <a
-                href="https://www.api-football.com/"
-                target="_blank"
-                className="font-bold underline"
-              >
-                Api-Football
-              </a>
-              .
-            </p>
-            <div className="space-x-4">
-              <Link
-                href="https://github.com/xmiguez/FootScore"
-                target="_blank"
-                rel="noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" })
-                )}
-              >
-                GitHub
-              </Link>
-            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   );
 }

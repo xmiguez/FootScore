@@ -9,7 +9,6 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import SiteHeader from "@/components/site-header";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import SiteFooter from "@/components/site-footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,8 +19,6 @@ const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
 });
-
-// export const fetchCache = "default-no-store";
 
 export const metadata: Metadata = {
   title: "FootScore",
@@ -51,7 +48,6 @@ export default function RootLayout({
           >
             <SiteHeader />
             {children}
-            <SiteFooter />
           </ThemeProvider>
         </body>
       </html>
