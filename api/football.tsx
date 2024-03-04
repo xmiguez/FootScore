@@ -20,23 +20,23 @@ export async function getMatches(date: string): Promise<User[]> {
   return prepa.response;
 }
 
-export async function getLive(): Promise<User[]> {
-  const res = await fetch(
-    "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all&timezone=America%2FSantiago",
-    {
-      cache: "no-cache",
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": `${process.env.APIFOOTBALL_TOKEN}`,
-        "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-      },
-    }
-  );
+// export async function getLive(): Promise<User[]> {
+//   const res = await fetch(
+//     "https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all&timezone=America%2FSantiago",
+//     {
+//       cache: "no-cache",
+//       method: "GET",
+//       headers: {
+//         "X-RapidAPI-Key": `${process.env.APIFOOTBALL_TOKEN}`,
+//         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+//       },
+//     }
+//   );
 
-  const prepa = await res.json();
+//   const prepa = await res.json();
 
-  return prepa.response;
-}
+//   return prepa.response;
+// }
 
 export async function getTeamInfo(id: string): Promise<User> {
   const response = await fetch(
