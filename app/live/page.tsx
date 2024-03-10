@@ -16,7 +16,7 @@ export default function Page() {
           method: "GET",
           headers: {
             "X-RapidAPI-Key":
-              "6494276f05msh16e930e9e1e7e9bp1b01e0jsne85d576e37d9",
+              "da4b544b64msh0e2301a8fea730ep1449a5jsn4293aa1e7d39",
             "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
           },
         }
@@ -26,8 +26,8 @@ export default function Page() {
       setDatos(data.response);
     };
     fetchData();
-    const interval = setInterval(fetchData, 60000);
-    return () => clearInterval(interval);
+    // const interval = setInterval(fetchData, 60000);
+    // return () => clearInterval(interval);
   }, []);
 
   return (
